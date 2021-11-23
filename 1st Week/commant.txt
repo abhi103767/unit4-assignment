@@ -1,0 +1,22 @@
+use assignment
+> db.users.insert({"first_name":"Avinash", "last_name":"Sharma","email":"abhi@123gmail.com","gender":"Male","ip_address":"12","age":"21"})
+db.users.insertMany([{"first_name":"Kacie","last_name":"Chaffer","email":"kchaffer0@netscape.com","gender":"Genderfluid","ip_address":"88.173.67.221"},
+db.users.insertMany([{"first_name":"Kacie","last_name":"Chaffer","email":"kchaffer0@netscape.com","gender":"Genderfluid","ip_address":"88.173.67.221"},
+... {"first_name":"Colette","last_name":"Kevane","email":"ckevane1@oakley.com","gender":"Genderfluid","ip_address":"65.5.85.201"},
+... {"first_name":"Rennie","last_name":"Adlam","email":"radlam2@skype.com","gender":"Genderfluid","ip_address":"32.98.145.195"},
+... {"first_name":"Nikola","last_name":"Forth","email":"nforth3@i2i.jp","gender":"Polygender","ip_address":"129.192.204.84"},
+... {"first_name":"Winifred","last_name":"O' Brian","email":"wobrian4@seesaa.net","gender":"Genderfluid","ip_address":"45.4.117.39"},
+... {"first_name":"Tremain","last_name":"Pritchard","email":"tpritchard5@irs.gov","gender":"Non-binary","ip_address":"110.10.157.171"},
+... {"first_name":"Boote","last_name":"Zorn","email":"bzorn6@livejournal.com","gender":"Male","ip_address":"136.203.98.194"},
+... {"first_name":"Stacie","last_name":"Creegan","email":"screegan7@jimdo.com","gender":"Male","ip_address":"252.106.219.33"},
+... {"first_name":"Jessika","last_name":"Blincow","email":"jblincow8@elegantthemes.com","gender":"Polygender","ip_address":"132.116.129.160"}])
+db.users.find();
+db.users.find({ "_id" : ObjectId("619ca3a53435a81fa9b13935")})
+db.users.update({ "_id" : ObjectId("619ca3a53435a81fa9b13935")}, {"macbook":"macbook_air"})
+db.users.update({ "_id" : ObjectId("619ca3a53435a81fa9b13935")}, { $set : {"first_name":"Avinash"}})
+db.users.updateMany({"gender": "Male"}, {$set:{"first_name": "Avinash"}})
+ db.users.remove({"gender": "Male"})
+ db.users.remove({"_id" : ObjectId("619ca4193435a81fa9b1393a")})
+ db.users.deleteOne({"_id" : ObjectId("619ca4193435a81fa9b13939")})
+ db.users.deleteMany({})
+ db.dropDatabase()

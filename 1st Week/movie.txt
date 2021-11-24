@@ -1,0 +1,7 @@
+db.users.find({movie_name: "Good Burger"}),
+db.users.find( { movie_name : { $not : { $eq : "Good Burger" }}})
+db.users.find({budget : { $gte : 1000}})
+> db.users.find({budget : { $lte : 1013}}).sort({budget:1})
+> db.users.find({$and : [{production_year : { $gt : 2000 }},{budget : { $gt : 1000 }}]})
+> db.users.find({$or : [{production_year : { $gt : 2000 }},{budget : { $gt : 1000 }}]})
+db.users.find({$nor : [{production_year : { $gt : 2000 }},{budget : { $gt : 10000 }}]})

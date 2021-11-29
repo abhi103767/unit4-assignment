@@ -4,11 +4,8 @@ const users = require('./data.json');
 
 const authorise = (permission) => {
 
-''
 
-    res.send = (body) => {
-        body.name = 'avinash';
-    }
+   
 
     return (req,res,next) => {
         console.log(permission);

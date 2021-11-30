@@ -76,7 +76,12 @@ const bookSchema = new mongoose.Schema({
         ref : 'author',
         required: true,
 
-    },]
+    },],
+    section_id : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'section',
+        required: true,
+    }
 
 },
 {
@@ -90,10 +95,27 @@ const Book = mongoose.model('book',bookSchema);
 // crud operations
 
 app.post('/books', async (req,res) => {
+    try{
     const book = Book.create(req.body);
+    res.send(book);
+    
+    }
+    catch(e){
+        res.status(500).send(e.message);
+    }
+
     
 })
 
+app.get('/books', async (req,res) => {
+    try {
+        const book = Book.find().lean().exec();
+        res.send(book);
+    }
+    catch(e){
+        res.send(e.message);
+    }
+})
 
 
 // author Schema 
@@ -112,9 +134,14 @@ const Author = mongoose.model('author',authorSchema);
 
 // CRUD Operation
 
-app.post('/authors', async (req,res) => {
+app.post('/authors', async (req,res) => { 
+    try {
     const author = await Author.create(req.body);
     res.send(author);
+    }
+    catch(e){
+        res.send(e.message);
+    }
 })
 
 app.get('/author', async (req,res) => {

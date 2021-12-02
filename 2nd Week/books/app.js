@@ -96,7 +96,7 @@ const Book = mongoose.model('book',bookSchema);
 
 app.post('/books', async (req,res) => {
     try{
-    const book = Book.create(req.body);
+    const book =  await Book.create(req.body);
     res.send(book);
     
     }
@@ -109,7 +109,7 @@ app.post('/books', async (req,res) => {
 
 app.get('/books', async (req,res) => {
     try {
-        const book = Book.find().lean().exec();
+        const book =  await Book.find().lean().exec();
         res.send(book);
     }
     catch(e){

@@ -90,7 +90,8 @@ app.get('/jobs/rating', async ( req, res) => {
     catch(e){
         res.status(500).send(company);
     }
-})
+});
+
 
 
 // 2 month notice period
@@ -123,3 +124,4 @@ app.listen('1234', async() => {
     await connect();
     console.log("We are listening on 1234");
 })
+

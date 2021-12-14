@@ -13,7 +13,7 @@ router.post('/', async (req,res) => {
     }
 
 })
-
+// here id is movie id.
 router.get('/:id' , async (req,res) => {
     try {
       const shows = await Show.find({movie : req.params.id});

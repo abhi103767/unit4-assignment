@@ -12,6 +12,5 @@ const theaterSchmea = new mongoose.Schema({
 
 )
 
-console.log(1);
 
 module.exports = mongoose.model('theater',theaterSchmea);

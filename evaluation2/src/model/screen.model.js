@@ -5,7 +5,8 @@ const screenSchmea = new mongoose.Schema({
    name : {type : String, required : true},
    theater : {type :  mongoose.Schema.Types.ObjectId,
     ref : 'theater',
-    required : true}
+    required : true
+}
 },
    {
        versionKey : false,

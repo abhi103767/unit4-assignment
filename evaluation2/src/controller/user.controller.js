@@ -14,17 +14,5 @@ router.post('/', async (req,res) => {
 
 })
 
-//get all for the actor
-router.get('/' , async (req,res) => {
-    console.log(2);
-    try {
-      const movies = await Movie.find({}).lean().exec();
-      console.log(movies);
-      res.send(movies);
-    }
-    catch(e){
-        res.send(e.message);
-    }
-})
 
 module.exports = router;
